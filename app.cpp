@@ -16,7 +16,7 @@ int main() {
 	{
 		UI();
 		int command;
-		std::cout << "Command: ";
+		std::cout << "Command:  ";
 		std::cin >> command;
 		switch (command)
 		{
