@@ -1,29 +1,30 @@
+#include "expense.h"
 #include <iostream>
 
-#include "domains.h"
-
 Expense::Expense() {
-	this->type = NULL;
 	this->day = 0;
 	this->sum = 0;
+	this->type = NULL;
 }
 
-Expense::Expense(unsigned int day, unsigned int sum, char* type) {
-	if (this->type) {
-		delete[] this->type;
-		this->type = NULL;
-	}
+Expense::Expense(const char* type, int day, int sum) {
 	this->type = new char[strlen(type) + 1];
 	strcpy_s(this->type, strlen(type) + 1, type);
 	this->day = day;
 	this->sum = sum;
 }
 
+Expense::Expense(const Expense& ex) {
+	this->type = new char[strlen(ex.type) + 1];
+	strcpy_s(this->type, strlen(ex.type) + 1, ex.type);
+	this->day = ex.day;
+	this->sum = ex.sum;
+}
+
 Expense::~Expense() {
-	if (this->type) {
+	if (this->type)
 		delete[] this->type;
-		this->type = NULL;
-	}
+	this->type = NULL;
 }
 
 int Expense::getDay() {
@@ -38,31 +39,34 @@ char* Expense::getType() {
 	return this->type;
 }
 
-void Expense::setDay(unsigned int day) {
+void Expense::setDay(int day) {
 	this->day = day;
 }
 
-void Expense::setSum(unsigned int sum) {
+void Expense::setSum(int sum) {
 	this->sum = sum;
 }
 
-void Expense::setType(char* type) {
-	if (this->type) {
+void Expense::setType(const char* type) {
+	if (this->type)
 		delete[] this->type;
-		this->type = NULL;
-	}
 	this->type = new char[strlen(type) + 1];
 	strcpy_s(this->type, strlen(type) + 1, type);
 }
 
 Expense& Expense::operator=(const Expense& ex) {
-	if (this->type) {
-		delete[] this->type;
-		this->type = NULL;
+	if (this != &ex) {
+		setType(ex.type);
+		this->day = ex.day;
+		this->sum = ex.sum;
 	}
-	this->type = new char[strlen(ex.type) + 1];
-	strcpy_s(this->type, strlen(ex.type) + 1, ex.type);
-	this->sum = ex.sum;
-	this->day = ex.day;
 	return *this;
+
 }
+
+bool Expense::operator==(const Expense& ex) const {
+	if (strcmp(this->type, ex.type) == 0 && this->day == ex.day && this->sum == ex.sum)
+		return true;
+	return false;
+}
+

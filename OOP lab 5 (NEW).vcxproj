@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{BEDFA26A-C5E1-484D-AA88-E64873DAC488}</ProjectGuid>
-    <RootNamespace>OOPlab4</RootNamespace>
+    <ProjectGuid>{F444C7EA-0FFE-4131-AE63-AD7799352121}</ProjectGuid>
+    <RootNamespace>OOPlab5NEW</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,17 +138,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="app.cpp" />
-    <ClCompile Include="repo.cpp" />
-    <ClCompile Include="tests.cpp" />
-    <ClCompile Include="expense.cpp" />
-    <ClCompile Include="UI.cpp" />
+    <ClInclude Include="expense.h" />
+    <ClInclude Include="Repository.h" />
+    <ClInclude Include="Service.h" />
+    <ClInclude Include="test.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="domains.h" />
-    <ClInclude Include="repo.h" />
-    <ClInclude Include="tests.h" />
-    <ClInclude Include="UI.h" />
+    <ClCompile Include="app.cpp" />
+    <ClCompile Include="Expense.cpp" />
+    <ClCompile Include="Repository.cpp" />
+    <ClCompile Include="Service.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
