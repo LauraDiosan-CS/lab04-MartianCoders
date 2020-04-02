@@ -142,6 +142,7 @@
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="test.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="app.cpp" />
@@ -149,6 +150,10 @@
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="UI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Expenses.in" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

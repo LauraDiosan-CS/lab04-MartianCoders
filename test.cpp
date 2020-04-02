@@ -32,27 +32,27 @@ void test_repository() {
 	storage1.addElement(ex1);
 	assert(storage1.getNumber() == 1);
 	assert(storage1.getAll()[0] == ex1);
-	storage1.deleteElement(1);
+	storage1.deleteElement(ex1);
 	assert(storage1.getNumber() == 0);
-
 	Expense ex2("da", 1, 1);
 	storage1.addElement(ex1);
-	storage1.updateElement(ex2, 1);
+	storage1.updateElement(ex1, ex2);
 	assert(storage1.getAll()[0] == ex2);
 	assert(storage1.findElement(ex2) == 1);
-	storage1.deleteElement(1);
+	storage1.deleteElement(ex2);
 	assert(storage1.findElement(ex2) == -1);
+	
 }
 
 void test_service() {
 	Service storage;
 	storage.addElement("mancare", 2, 200);
 	assert(storage.getSize() == 1);
-	storage.updateElement("apa", 1, 200, 1);
+	storage.updateElement("mancare", 2, 200, "apa", 1, 200);
 	Expense e("apa", 1, 200);
 	assert(storage.getAll()[0] == e);
 	assert(storage.findElement("apa", 1, 200) == 1);
-	storage.deleteElement(1);
+	storage.deleteElement("apa", 1, 200);
 	assert(storage.getSize() == 0);
 }
 

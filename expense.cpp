@@ -39,6 +39,7 @@ char* Expense::getType() {
 	return this->type;
 }
 
+
 void Expense::setDay(int day) {
 	this->day = day;
 }
@@ -53,6 +54,8 @@ void Expense::setType(const char* type) {
 	this->type = new char[strlen(type) + 1];
 	strcpy_s(this->type, strlen(type) + 1, type);
 }
+
+
 
 Expense& Expense::operator=(const Expense& ex) {
 	if (this != &ex) {
@@ -69,4 +72,23 @@ bool Expense::operator==(const Expense& ex) const {
 		return true;
 	return false;
 }
+
+ostream& operator<<(ostream& os, const Expense& ex) {
+	os << ex.day << ' ' << ex.sum << ' ' << ex.type << '\n';
+	return os;
+}
+
+bool Expense::operator<(const Expense& ex) const {
+	if (this->sum < ex.sum)
+		return true;
+	return false;
+}
+
+bool Expense::operator>(const Expense& ex) const {
+	if (this->sum > ex.sum)
+		return true;
+	return false;
+}
+
+
 

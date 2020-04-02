@@ -13,14 +13,21 @@ public:
 
 	/* Basic functions */
 	void addElement(const char*, int, int); // Creates Expense object using input and add in storage (In: type, day, sum)
-	void deleteElement(int); // Delete an Expense object from storage (In: position)
-	void updateElement(const char*, int, int, int); // Creates Expense object using input and update in storage by position (In: type, day, sum, position)
+	void deleteElement(const char*, int, int); // Delete an Expense object from storage (In: position)
+	void deleteByType(const char*);
+	void deleteByDays(int, int);
+	void updateElement(const char*, int, int, const char*, int, int); // Creates Expense object using input and update in storage by position (In: type, day, sum, position)
+	int sumElements(const char*);
+	vector<Expense> sortDay(int);
+	vector<Expense> sortType(const char*);
+	void filterType(const char*);
+	void filterSums(const char*, string, int);
+	Expense maxElement(int);
 
 	/* Get's */
 	int findElement(const char*, int, int); // Creates Expense object using input and returns position (In: type, day, sum | Out: position)
-	Expense* getAll(); // Returns pointer of storage (Out: storage pointer)
+	vector<Expense> getAll(); // Returns pointer of storage (Out: storage pointer)
 	int getSize(); // Returns size of storage (Out: number)
-
 
 
 };

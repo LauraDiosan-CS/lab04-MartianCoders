@@ -20,10 +20,12 @@ public:
 	int getSum(); // Get sum (Out: sum)
 	char* getType(); // Get type (Out: type)
 
+
 	/* Set's */
 	void setDay(int); // Set day (In: day)
 	void setSum(int); // Set sum (In: sum)
 	void setType(const char*); // Set type (In: type)
+
 
 	Expense& operator=(const Expense&);
 
