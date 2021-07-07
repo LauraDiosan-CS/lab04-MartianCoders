@@ -1,0 +1,7 @@
+﻿  Service.cpp
+  UI.cpp
+  app.cpp
+  test.cpp
+  Generating Code...
+D:\C++\OOP lab 5 (NEW)\Service.cpp(76): warning C4715: 'Service::maxElement': not all control paths return a value
+  OOP lab 5 (NEW).vcxproj -> D:\C++\OOP lab 5 (NEW)\x64\Debug\OOP lab 5 (NEW).exe
